@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "Ноутбук Apple MacBook Air 13 (M2)",
+    "description": "Мощный, легкий и бесшумный. Идеален для работы, учебы и программирования. Держит заряд до 18 часов.",
+    "price": 3500,
+    "category": "laptops",
+    "isAvailable": true,
+    "stockCount": 5
+  },
+  {
+    "id": "2",
+    "title": "Смартфон Samsung Galaxy S23 Ultra",
+    "description": "Флагман на Android с лучшей камерой 200 Мп и встроенным стилусом S Pen. Экран 120 Гц.",
+    "price": 3800,
+    "category": "phones",
+    "isAvailable": true,
+    "stockCount": 3
+  },
+  {
+    "id": "3",
+    "title": "Мышь Logitech MX Master 3S",
+    "description": "Легендарная эргономичная мышь для кодеров и дизайнеров. Бесшумные клики и электромагнитное колесико.",
+    "price": 350,
+    "category": "accessories",
+    "isAvailable": true,
+    "stockCount": 10
+  },
+  {
+    "id": "4",
+    "title": "Ноутбук ASUS ROG Zephyrus G14",
+    "description": "Компактный игровой монстр на базе процессора AMD Ryzen 9 и видеокарты RTX 4060. Тянет любые игры.",
+    "price": 4200,
+    "category": "laptops",
+    "isAvailable": true,
+    "stockCount": 2
+  },
+  {
+    "id": "5",
+    "title": "Смартфон Apple iPhone 15 Pro",
+    "description": "Титановый корпус, новый процессор A17 Pro и кнопка Action Button. Лучший выбор для видеосъемки.",
+    "price": 4100,
+    "category": "phones",
+    "isAvailable": true,
+    "stockCount": 4
+  },
+  {
+    "id": "6",
+    "title": "Механическая клавиатура Keychron K8",
+    "description": "Беспроводная TKL-клавиатура с подсветкой RGB. Идеальный тайпинг благодаря красным свитчам Gateron.",
+    "price": 280,
+    "category": "accessories",
+    "isAvailable": true,
+    "stockCount": 8
+  },
+  {
+    "id": "7",
+    "title": "Ноутбук Lenovo IdeaPad 3",
+    "description": "Бюджетный вариант для офиса и просмотра фильмов. Процессор Core i3, 8 ГБ оперативки, быстрый SSD.",
+    "price": 1200,
+    "category": "laptops",
+    "isAvailable": true,
+    "stockCount": 15
+  },
+  {
+    "id": "8",
+    "title": "Смартфон Xiaomi Poco X5 Pro",
+    "description": "Топ за свои деньги. Отличный AMOLED-экран, стереодинамики и быстрая зарядка за 45 минут.",
+    "price": 900,
+    "category": "phones",
+    "isAvailable": true,
+    "stockCount": 7
+  },
+  {
+    "id": "9",
+    "title": "Наушники Sony WH-1000XM5",
+    "description": "Полноразмерные наушники с лучшим в мире активным шумоподавлением. Забудьте о звуках метро и коллег.",
+    "price": 1100,
+    "category": "accessories",
+    "isAvailable": true,
+    "stockCount": 4
+  },
+  {
+    "id": "10",
+    "title": "Подставка для ноутбука Moft",
+    "description": "Невидимая подставка-наклейка, которая всегда с вами. Помогает держать осанку ровной при работе.",
+    "price": 60,
+    "category": "accessories",
+    "isAvailable": true,
+    "stockCount": 20
+  },
+  {
+    "id": "11",
+    "title": "Смартфон Google Pixel 8",
+    "description": "Чистый Android, магические функции ИИ для обработки фото и гарантия обновлений на 7 лет.",
+    "price": 2400,
+    "category": "phones",
+    "isAvailable": true,
+    "stockCount": 1
+  },
+  {
+    "id": "12",
+    "title": "Ноутбук Dell XPS 15",
+    "description": "Премиальный Windows-ультрабук с невероятным 4K OLED-экраном без рамок. Создан для креаторов.",
+    "price": 5500,
+    "category": "laptops",
+    "isAvailable": true,
+    "stockCount": 2
+  }
+]
