@@ -1,5 +1,6 @@
 import { navigate } from '../router';
 import type { Product } from '../types';
+
 export const renderHome = async (): Promise<void> => {
   const app = document.getElementById('app');
   if (!app) return;
@@ -15,7 +16,9 @@ export const renderHome = async (): Promise<void> => {
     
     <main class="container">
       <section class="filters">
-        <input type="text" id="search-input" placeholder="Поиск товара..." class="input" />
+        <div class="search-wrapper">
+          <input type="text" id="search-input" placeholder="Поиск товара... (или Enter)" class="input w-100" />
+        </div>
         
         <select id="category-select" class="input">
           <option value="">Все категории</option>
@@ -30,6 +33,7 @@ export const renderHome = async (): Promise<void> => {
           <option value="desc">Сначала дорогие</option>
         </select>
 
+        <!-- Вернули кнопку Применить -->
         <button id="btn-search" class="btn btn-secondary">Применить</button>
       </section>
       
@@ -42,12 +46,36 @@ export const renderHome = async (): Promise<void> => {
 
   await loadProducts();
 
-  document.getElementById('btn-search')?.addEventListener('click', async () => {
-    const searchVal = (document.getElementById('search-input') as HTMLInputElement).value;
-    const categoryVal = (document.getElementById('category-select') as HTMLSelectElement).value;
-    const sortVal = (document.getElementById('sort-select') as HTMLSelectElement).value;
-    await loadProducts(searchVal, categoryVal, sortVal);
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const categorySelect = document.getElementById('category-select') as HTMLSelectElement;
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+
+  let searchTimeout: ReturnType<typeof setTimeout>;
+
+  const triggerSearch = async () => {
+    await loadProducts(searchInput.value, categorySelect.value, sortSelect.value);
+  };
+
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(triggerSearch, 300);
   });
+
+  searchInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      clearTimeout(searchTimeout);
+      triggerSearch();
+    }
+  });
+
+  document.getElementById('btn-search')?.addEventListener('click', () => {
+    clearTimeout(searchTimeout);
+    triggerSearch();
+  });
+
+  categorySelect?.addEventListener('change', triggerSearch);
+  sortSelect?.addEventListener('change', triggerSearch);
 };
 
 const loadProducts = async (search = '', category = '', sort = ''): Promise<void> => {
@@ -56,22 +84,26 @@ const loadProducts = async (search = '', category = '', sort = ''): Promise<void
 
   try {
     const url = new URL('http://localhost:3000/api/products');
-    if (search) url.searchParams.append('search', search);
+    
+    if (search.trim()) url.searchParams.append('search', search.trim());
     if (category) url.searchParams.append('category', category);
     if (sort) url.searchParams.append('sort', sort);
 
-    const res = await fetch(url.toString());
+    const res = await fetch(url.toString(), { cache: 'no-store' });
     const products: Product[] = await res.json();
 
     if (products.length === 0) {
-      list.innerHTML = '<p>Товары не найдены</p>';
+      list.innerHTML = `
+        <div class="empty-cart" style="grid-column: 1 / -1;">
+          <h3>Товары не найдены 🔍</h3>
+          <p>Попробуйте изменить параметры поиска</p>
+        </div>`;
       return;
     }
 
     list.innerHTML = products.map(p => `
       <div class="product-card">
         <div class="product-info">
-          <!-- ВАЖНО ПО ТЗ: data-title и data-price -->
           <h3 data-title>${p.title}</h3>
           <p class="desc">${p.description}</p>
           <p class="stock">В наличии: ${p.stockCount} шт.</p>
