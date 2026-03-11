@@ -10,7 +10,6 @@ export const getProducts = async (req: Request, res: Response): Promise<void> =>
   if (category) {
     products = products.filter(p => p.category === category);
   }
-  // Строгая типизация query параметров
   const search = req.query.search as string | undefined;
   const sort = req.query.sort as 'asc' | 'desc' | undefined;
 
