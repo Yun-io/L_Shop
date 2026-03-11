@@ -6,7 +6,6 @@ import { Cart, Product, PopulatedCart, PopulatedCartItem } from '../types';
 const cartDB = new JsonDB<Cart>('carts.json');
 const productDB = new JsonDB<Product>('products.json');
 
-// Получить корзину пользователя с данными о продуктах
 export const getCart = async (req: AuthRequest, res: Response): Promise<void> => {
   const userId = req.userId!;
   const carts = await cartDB.readAll();
@@ -29,10 +28,9 @@ export const getCart = async (req: AuthRequest, res: Response): Promise<void> =>
   res.json(response);
 };
 
-// Изменить состояние корзины (добавить, убавить, удалить)
 export const updateCart = async (req: AuthRequest, res: Response): Promise<void> => {
   const userId = req.userId!;
-  const { productId, action } = req.body; // action: 'add' | 'subtract' | 'remove'
+  const { productId, action } = req.body; 
 
   const products = await productDB.readAll();
   const product = products.find(p => p.id === productId);

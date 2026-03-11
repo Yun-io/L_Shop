@@ -14,12 +14,11 @@ export const checkoutDelivery = async (req: AuthRequest, res: Response): Promise
     return;
   }
 
-  // Здесь должна быть логика сохранения заказа, но по ТЗ просят просто очистить корзину
   const carts = await cartDB.readAll();
   const cartIndex = carts.findIndex(c => c.userId === userId);
 
   if (cartIndex > -1) {
-    carts[cartIndex].items = []; // Очищаем корзину
+    carts[cartIndex].items = []; 
     await cartDB.writeAll(carts);
   }
 
