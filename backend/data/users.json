@@ -4,6 +4,7 @@
     "name": "Никита",
     "email": "kakpuckececes@gmail.com",
     "login": "221279in221279",
-    "passwordHash": "221279in221279"
+    "passwordHash": "221279in221279",
+    "role": "owner" 
   }
 ]

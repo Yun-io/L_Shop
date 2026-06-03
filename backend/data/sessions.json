@@ -3,5 +3,37 @@
     "sessionId": "633dc005-77e7-4b56-a826-0fe6ea820a2f",
     "userId": "62336468-3b03-49ec-aee7-497ae25aadd3",
     "expiresAt": 1771620653679
+  },
+  {
+    "sessionId": "0e51b4d2-eeba-4585-8484-d92a83db7b36",
+    "userId": "25ca7c42-8e17-4786-970e-c522edfb9eb3",
+    "expiresAt": 1780499778058
+  },
+  {
+    "sessionId": "941b9f95-f120-40d9-b7b3-870f9793f03f",
+    "userId": "25ca7c42-8e17-4786-970e-c522edfb9eb3",
+    "expiresAt": 1780499870360
+  },
+  {
+    "sessionId": "f747ee1b-30f2-4eb7-ae54-51a9fcef11b0",
+    "userId": "25ca7c42-8e17-4786-970e-c522edfb9eb3",
+    "expiresAt": 1780499909105
+  },
+  {
+    "sessionId": "01573dee-3e60-4852-80b3-5953f4a178fb",
+    "userId": "62336468-3b03-49ec-aee7-497ae25aadd3",
+    "expiresAt": 1780500207981
+  },
+  {
+    "sessionId": "28ace768-db74-4421-81c8-093449f5d73f",
+    "userId": "62336468-3b03-49ec-aee7-497ae25aadd3",
+    "expiresAt": 1780501915075,
+    "role": "owner"
+  },
+  {
+    "sessionId": "44bf7df6-a177-48b2-b2ec-30fd8c00e7a6",
+    "userId": "62336468-3b03-49ec-aee7-497ae25aadd3",
+    "expiresAt": 1780505274063,
+    "role": "owner"
   }
 ]

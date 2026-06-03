@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
 
-import { register, login } from './controllers/authController';
+import { register, login, checkMe } from './controllers/authController';
 import { getProducts } from './controllers/productController';
 import { getCart, updateCart } from './controllers/cartController';
 import { checkoutDelivery } from './controllers/deliveryController';
@@ -116,6 +116,7 @@ app.post('/api/login', login);
  *       500:
  *         description: Внутренняя ошибка сервера
  */
+app.get('/api/me', checkMe);
 app.get('/api/products', getProducts);
 
 /**

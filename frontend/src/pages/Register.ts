@@ -42,9 +42,9 @@ export const renderRegister = (): void => {
         credentials: 'include' 
       });
 
-      if (response.ok) {
-        window.showToast('Регистрация успешна! Добро пожаловать.', false); // Зеленое уведомление
-        navigate('/');
+        if (response.ok) {
+        if (window.showToast) window.showToast('Регистрация успешна! Войдите в свой аккаунт.', false);
+        navigate('/login');
       } else {
         const err = await response.json();
         window.showToast(err.error, true); // Красное уведомление
